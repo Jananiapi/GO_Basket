@@ -1,0 +1,290 @@
+[
+  {
+    "method": "POST",
+    "path": "/basketorder/add/scrips",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "addBasketScrip",
+    "module": "basket",
+    "go_action": "addScrip"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/create",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "createBasketName",
+    "module": "basket",
+    "go_action": "create"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/delete/scrips",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "deleteBasketScrip",
+    "module": "basket",
+    "go_action": "deleteScrip"
+  },
+  {
+    "method": "DELETE",
+    "path": "/basketorder/delete/{basketId}",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "deleteBasket",
+    "module": "basket",
+    "go_action": "delete"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/execute",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "excuteBasketOrder",
+    "module": "basket",
+    "go_action": "execute"
+  },
+  {
+    "method": "GET",
+    "path": "/basketorder/get",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "getBasketNames",
+    "module": "basket",
+    "go_action": "get"
+  },
+  {
+    "method": "GET",
+    "path": "/basketorder/get/scrips/{basketId}",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "retrieveScrips",
+    "module": "basket",
+    "go_action": "scrips"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/nest/spanmargin",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "getBasketMargin",
+    "module": "margin",
+    "go_action": "nestSpan"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/rename",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "updateBasketName",
+    "module": "basket",
+    "go_action": "rename"
+  },
+  {
+    "method": "GET",
+    "path": "/basketorder/reset/{basketId}",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "resetExecutionStatus",
+    "module": "basket",
+    "go_action": "reset"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/spanmargin",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "getSpanMargin",
+    "module": "margin",
+    "go_action": "span"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/update/scrips",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "updateBasketScrip",
+    "module": "basket",
+    "go_action": "updateScrip"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorder/update/scrips/list",
+    "java_controller": "in/codifi/basket/controller/BasketOrderController.java",
+    "java_method": "updateBasketScripList",
+    "module": "basket",
+    "go_action": "updateScripList"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorderapi/adminCreate",
+    "java_controller": "in/codifi/basket/controller/BasketOrderApiController.java",
+    "java_method": "adminCreateBasketName",
+    "module": "admin",
+    "go_action": "adminCreate"
+  },
+  {
+    "method": "POST",
+    "path": "/basketorderapi/adminCreate/temp",
+    "java_controller": "in/codifi/basket/controller/BasketOrderApiController.java",
+    "java_method": "adminCreateBasketNameTemp",
+    "module": "admin",
+    "go_action": "adminTemp"
+  },
+  {
+    "method": "DELETE",
+    "path": "/basketorderapi/deleteExpiredBasket",
+    "java_controller": "in/codifi/basket/controller/BasketOrderApiController.java",
+    "java_method": "deleteExpiredBasket",
+    "module": "admin",
+    "go_action": "deleteExpired"
+  },
+  {
+    "method": "POST",
+    "path": "/cache/delete/expiry",
+    "java_controller": "in/codifi/cache/CacheController.java",
+    "java_method": "deleteExpiry",
+    "module": "cache",
+    "go_action": "expiry"
+  },
+  {
+    "method": "GET",
+    "path": "/research/get/sector/data/{id}",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getSectorDetails",
+    "module": "research",
+    "go_action": "sector"
+  },
+  {
+    "method": "POST",
+    "path": "/research/getResearchCall",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getResearchCall",
+    "module": "research",
+    "go_action": "research"
+  },
+  {
+    "method": "POST",
+    "path": "/research/getResearchWithBasket",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getResWithBasketDetails",
+    "module": "research",
+    "go_action": "researchBasket"
+  },
+  {
+    "method": "GET",
+    "path": "/research/getUniqStatus",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getUniqStatus",
+    "module": "research",
+    "go_action": "status"
+  },
+  {
+    "method": "POST",
+    "path": "/research/getall/rc/report",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getResearchReport",
+    "module": "research",
+    "go_action": "reports"
+  },
+  {
+    "method": "GET",
+    "path": "/research/getall/sector/data",
+    "java_controller": "in/codifi/basket/controller/IResearchCallApiController.java",
+    "java_method": "getAllSector",
+    "module": "research",
+    "go_action": "sectors"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/basket/get/category/header",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "getCatSubCatFrUser",
+    "module": "thematic",
+    "go_action": "category"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/basket/get/{id}",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "getDetailsThematicBasket",
+    "module": "thematic",
+    "go_action": "thematicDetails"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/basket/getall",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "getAllThematicBasket",
+    "module": "thematic",
+    "go_action": "thematicAll"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/basket/holdings",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "getBasketHoldings",
+    "module": "thematic",
+    "go_action": "legacyHoldings"
+  },
+  {
+    "method": "POST",
+    "path": "/thematic/basket/invest",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "executeThematic",
+    "module": "thematic",
+    "go_action": "invest"
+  },
+  {
+    "method": "POST",
+    "path": "/thematic/basket/rebalance/details",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "rebalanceThematic",
+    "module": "thematic",
+    "go_action": "rebalance"
+  },
+  {
+    "method": "POST",
+    "path": "/thematic/basket/report",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "thematicReport",
+    "module": "thematic",
+    "go_action": "view"
+  },
+  {
+    "method": "POST",
+    "path": "/thematic/basket/review",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "reviewThematic",
+    "module": "thematic",
+    "go_action": "review"
+  },
+  {
+    "method": "POST",
+    "path": "/thematic/basket/v1/invest",
+    "java_controller": "in/codifi/basket/controller/ThematicBasketController.java",
+    "java_method": "executeThematicV1",
+    "module": "thematic",
+    "go_action": "investV1"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/holdings/get",
+    "java_controller": "in/codifi/basket/controller/HoldingsController.java",
+    "java_method": "getUserRebalancedBaskets",
+    "module": "holdings",
+    "go_action": "holdings"
+  },
+  {
+    "method": "GET",
+    "path": "/thematic/holdings/get/V1",
+    "java_controller": "in/codifi/basket/controller/HoldingsController.java",
+    "java_method": "getUserRebalancedBasketsV1",
+    "module": "holdings",
+    "go_action": "holdingsV1"
+  },
+  {
+    "method": "GET",
+    "path": "/token",
+    "java_controller": "in/codifi/basket/filter/TokenResource.java",
+    "java_method": "getTokens",
+    "module": "token",
+    "go_action": "token"
+  },
+  {
+    "method": "GET",
+    "path": "/token/logout",
+    "java_controller": "in/codifi/basket/filter/TokenResource.java",
+    "java_method": "logout",
+    "module": "token",
+    "go_action": "logout"
+  }
+]

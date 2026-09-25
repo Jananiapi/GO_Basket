@@ -1,0 +1,6 @@
+bin
+basket
+*.db
+*.db-*
+.git
+.env

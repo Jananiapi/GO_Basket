@@ -1,0 +1,7 @@
+/basket
+/bin/
+*.db
+*.db-*
+*.log
+coverage.out
+.env

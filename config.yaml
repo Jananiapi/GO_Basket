@@ -1,0 +1,115 @@
+server:
+  address: ':9092'
+  base_path: ''
+  read_timeout: 30s
+  write_timeout: 120s
+  shutdown_timeout: 30s
+  max_body_bytes: 2097152
+  allowed_origins: []
+database:
+  driver: mysql # mysql | postgres | mssql (or sqlserver) | sqlite
+  dsn: '${BASKET_DB_DSN}' # user:password@tcp(localhost:3306)/basket?charset=utf8mb4&parseTime=true&loc=Asia%2FKolkata
+  auto_migrate: false
+  max_open: 25
+  max_idle: 5
+  conn_max_lifetime: 30m
+modules:
+  basket: true
+  admin: true
+  research: true
+  thematic: true
+  holdings: true
+  margin: true
+  cache: true
+  notifications: true
+  scheduler: true
+  token: true
+auth:
+  enabled: true
+  userinfo_required: true
+  userinfo_url: "" # discovered from issuer unless explicitly set
+  mode: oidc # oidc | hmac
+  issuer: '${BASKET_OIDC_ISSUER}'
+  audience: '${BASKET_OIDC_AUDIENCE}'
+  jwks_url: '' # optional; otherwise discover from issuer
+  hmac_secret: '${BASKET_JWT_SECRET}'
+  user_claim: preferred_username
+  dev_user: '' # explicit local-only identity when enabled: false
+  admin_token: '${BASKET_ADMIN_TOKEN}'
+  public_paths: [/basketorderapi/deleteExpiredBasket]
+cache:
+  provider: redis # hazelcast (Java Serializable or JSON values) | http (Java cache bridge) | file
+  cluster: '${BASKET_CACHE_CLUSTER}'
+  addresses: ['127.0.0.1:5701']
+  file: ''
+  url: '${BASKET_CACHE_BRIDGE_URL}'
+  token: '${BASKET_CACHE_BRIDGE_TOKEN}'
+  redis:
+    address: '${BASKET_REDIS_ADDR}'
+    password: '${BASKET_REDIS_PASSWORD}'
+    db: 0
+  maps:
+    contracts: contractMaster
+    sessions: restUserSession
+    customers: userKeyMap
+    devices: deviceMappingDetails
+    ideas: researchIdeas
+    colors: scripColorCode
+    order_types: orderTypes
+    product_types: productTypes
+    encryption_keys: userEncKeyMap
+    poa_status: poaStatus
+    holdings_data: holdingsData
+    oms_types: userOmsType
+upstream:
+  ca_file: ""
+  tls_insecure_skip_verify: false
+  order_url: '${BASKET_ORDER_URL}'
+  span_url: '${BASKET_SPAN_URL}'
+  basket_margin_url: '${BASKET_MARGIN_URL}'
+  order_book_url: '${BASKET_ORDER_BOOK_URL}'
+  timeout: 30s
+  max_response_bytes: 16777216
+business:
+  max_scrips: 20
+  admin_exchanges: [NSE, BSE, NFO, CDS]
+  timezone: Asia/Kolkata
+  market_open: '09:15'
+  market_close: '15:30'
+  market_days: [1, 2, 3, 4, 5]
+  invest_buffer: '10'
+  equity_margin_divisor: '5'
+  span_account: HI
+  span_product: H
+  closed_research_days: 7
+  execution_message: 'Basket executed successfully' # api.txt spelling; Java constant spells exeuted
+  admin_workers: 16
+  admin_queue: 4096
+  product_aliases: 'CNC:CNC||CO:CO||MIS:MIS||NRML:NRML||MTF:MTF'
+  legacy_nest_first_only: true # Java upstream request uses only the first margin leg
+scheduler:
+  cron: '0 0 1 * * *'
+  delete_scrips: true
+  delete_baskets: true
+  startup_cleanup: true
+notifications:
+  provider: fcm # fcm | legacy
+  url: '' # FCM v1 override or legacy FCM URL
+  api_key: '${BASKET_FCM_API_KEY}'
+  credentials_file: '${BASKET_FIREBASE_CREDENTIALS}'
+  project_id: '${BASKET_FIREBASE_PROJECT}'
+  batch_size: 500
+logging:
+  access: true
+  database_config: null # optional independent logs database, same fields as database
+  access_table_pattern: "tbl_02012006_access_log_15" # Go time layout, matches Java hourly names
+  rest_table_pattern: "tbl_02012006_rest_access_log"
+  max_body_bytes: 8192
+  sql: false
+  database: false
+  clickhouse_url: ''
+  clickhouse_user: '${BASKET_CLICKHOUSE_USER}'
+  clickhouse_password: '${BASKET_CLICKHOUSE_PASSWORD}'
+  clickhouse_database: basket
+  clickhouse_access_table: access_logs
+  clickhouse_rest_table: rest_access_logs

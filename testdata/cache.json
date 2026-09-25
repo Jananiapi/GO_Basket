@@ -1,0 +1,9 @@
+{
+  "contractMaster": {
+    "NSE_2188": {"exch":"NSE","token":"2188","tradingSymbol":"GENCON-EQ","formattedInsName":"GENCON-EQ","lotSize":"1","expiry":null,"pdc":"43.04"}
+  },
+  "restUserSession": {"LOCALUSER_REST_SESSION":"local-session"},
+  "userKeyMap": {},
+  "deviceMappingDetails": {},
+  "researchIdeas": {}
+}

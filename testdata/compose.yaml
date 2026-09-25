@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: basket-test-only
+      MYSQL_DATABASE: basket_test
+    ports: ['127.0.0.1:13316:3306']
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-pbasket-test-only']
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: basket-test-only
+      POSTGRES_DB: basket_test
+    ports: ['127.0.0.1:15442:5432']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d basket_test']
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    profiles: ['mssql']
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: Basket-Test-Only-2026!
+      MSSQL_PID: Developer
+    ports: ['127.0.0.1:11443:1433']
